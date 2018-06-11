@@ -12,7 +12,7 @@ var VoiceType = Class.extend({
     this.voiceLow = 0
     this.voiceHigh = 0
     this.voiceBuffer = []
-    this.sampleCount = 60 // min sample count to get voice type
+    this.sampleCount = 90 // min sample count to get voice type
     this.fractal = new Fractal()
 
     this.refs = {
@@ -55,7 +55,7 @@ var VoiceType = Class.extend({
           if(lastMidi == this.voiceBuffer[i]) count++
         }
         // more than half of samples are same so this is stable note from voice
-        if(count > this.sampleCount){
+        if(count > this.sampleCount/2){
           this.setFromVoice(lastMidi)
         }
     }
