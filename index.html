@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="lv" lang="lv">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Balss tips</title>
+  <script src="./js/class.js"></script>
+  <script src="./js/analyzer.js"></script>
+  <script src="./js/mic.js"></script>
+  <script src="./js/voiceType.js"></script>
+  <script src="./js/fractal.js"></script>
+  <script src="./js/rct.js"></script>
+</head>
+<body>
+
+<div id="voiceTypeContainer">
+  <canvas id="canvas" width="400" height="400"></canvas>
+  <div id="genderContainer">
+    <input id="genderFemale" type="button" value="sieviete" />
+    <input id="genderMale" type="button" value="vīrietis" />
+  </div>
+  <div id="instructionContainer" class="hidden"></div>
+  <div id="resultContainer" class="hidden"></div>
+</div>
+    
+<script>
+
+  // global variables
+  var analyserNode
+  var audioContext
+  var voiceType
+  var analyzer
+
+  // initialization
+  window.onload = function() {
+    analyzer = new Analyzer()
+    voiceType = new VoiceType()
+  }
+
+</script>
+
+
+<style>
+  .hidden { display: none; }
+  #voiceTypeContainer { 
+    position: relative; 
+    width: 400px;
+    height: 400px;
+  }
+  #genderContainer,  #resultContainer, #instructionContainer { 
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(107, 26, 108, 0.8);
+  }
+  #instructionContainer {
+    color: white;
+    font-family: Arial;
+    font-size: 34px;
+  }
+  #resultContainer {
+    color: white;
+    font-family: Arial;
+    font-size: 25px;
+  }
+</style>
+
+</body>
+</html>
